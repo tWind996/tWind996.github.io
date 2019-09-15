@@ -159,10 +159,25 @@
     <article id="post-算法设计课笔记/稳定匹配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/15/算法设计课笔记/稳定匹配/">稳定匹配问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/15/算法设计课笔记/稳定匹配/" class="archive-article-date">
+  	<time datetime="2019-09-15T02:22:12.716Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h3><p>社会问题：医院与学生匹配</p>
-<h3 id="def"><a href="#def" class="headerlink" title="def."></a>def.</h3><ul>
+<h3 id="Def"><a href="#Def" class="headerlink" title="Def."></a>Def.</h3><ul>
 <li>Unstable pair. x and y are unstable if:  <ul>
 <li>x prefers y.</li>
 <li>y prefers x.</li>
@@ -178,7 +193,7 @@
 <ul>
 <li>Stable matching. A stable matching is a <strong>perfect matching</strong> with no unstable pairs.</li>
 </ul>
-<h3 id="algorithm"><a href="#algorithm" class="headerlink" title="algorithm."></a>algorithm.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">GALE–SHAPLEY (preference lists for men and women)</span><br><span class="line"> </span><br><span class="line">INITIALIZE S to empty matching</span><br><span class="line">WHILE  (some man m is unmatched and hasn&apos;t proposed to every woman)    </span><br><span class="line">    w ← ﬁrst woman on m&apos;s list to whom m has not yet proposed. </span><br><span class="line">    IF  (w is unmatched) </span><br><span class="line">        Add pair m–w to matching S. </span><br><span class="line">    ELSE IF  (w prefers m to her current partner m&apos;) </span><br><span class="line">        Remove pair m&apos;–w from matching S. </span><br><span class="line">        Add pair m–w to matching S. </span><br><span class="line">    ELSE w rejects m.</span><br><span class="line">RETURN stable matching S.</span><br></pre></td></tr></table></figure>
+<h3 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm."></a>Algorithm.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">GALE–SHAPLEY (preference lists for men and women)</span><br><span class="line"> </span><br><span class="line">INITIALIZE S to empty matching</span><br><span class="line">WHILE  (some man m is unmatched and hasn&apos;t proposed to every woman)    </span><br><span class="line">    w ← ﬁrst woman on m&apos;s list to whom m has not yet proposed. </span><br><span class="line">    IF  (w is unmatched) </span><br><span class="line">        Add pair m–w to matching S. </span><br><span class="line">    ELSE IF  (w prefers m to her current partner m&apos;) </span><br><span class="line">        Remove pair m&apos;–w from matching S. </span><br><span class="line">        Add pair m–w to matching S. </span><br><span class="line">    ELSE w rejects m.</span><br><span class="line">RETURN stable matching S.</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>termination<ul>
@@ -198,7 +213,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h3><blockquote>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary."></a>Summary.</h3><blockquote>
 <p>Cond. Man-optimal. i.e. men chase women.</p>
 </blockquote>
 <ol>
@@ -210,7 +225,7 @@
 
 </li>
 </ol>
-<h3 id="problem"><a href="#problem" class="headerlink" title="problem."></a>problem.</h3><p>Q.  Do stable matchings always exist?<br>A.  Not obvious a priori. e.g. 2n people; each person ranks others from 1 to 2n–1. </p>
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem."></a>Problem.</h3><p>Q.  Do stable matchings always exist?<br>A.  Not obvious a priori. e.g. 2n people; each person ranks others from 1 to 2n–1. </p>
 <p>Q.  Does man-optimality come at the expense of the women?<br>A.  Yes.</p>
 <p>Q.  Can there be an incentive to misrepresent your preference list?<br>A. No, for any man; yes, for some women.</p>
 
@@ -221,6 +236,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">算法设计笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -421,6 +447,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">算法设计笔记</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
