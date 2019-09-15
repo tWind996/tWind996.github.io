@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//chuwenda.cn">
-  <title>Archives: 2019 | 褚文达的博客</title>
+  <title>复杂度描述 | 褚文达的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="褚文达的博客">
-<meta property="og:url" content="//chuwenda.cn/archives/2019/index.html">
+  <meta name="description" content="Cond. n is   Def. Poly-time algorithm. When the input size doubles, the algorithm should only slow down by some constant factor C.   There exists constants c &amp;gt; 0 and d &amp;gt; 0 such that on every in">
+<meta name="keywords" content="算法设计笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复杂度描述">
+<meta property="og:url" content="//chuwenda.cn/2019/09/15/算法设计课笔记/复杂度描述/index.html">
 <meta property="og:site_name" content="褚文达的博客">
+<meta property="og:description" content="Cond. n is   Def. Poly-time algorithm. When the input size doubles, the algorithm should only slow down by some constant factor C.   There exists constants c &amp;gt; 0 and d &amp;gt; 0 such that on every in">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-15T09:31:01.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="褚文达的博客">
+<meta name="twitter:title" content="复杂度描述">
+<meta name="twitter:description" content="Cond. n is   Def. Poly-time algorithm. When the input size doubles, the algorithm should only slow down by some constant factor C.   There exists constants c &amp;gt; 0 and d &amp;gt; 0 such that on every in">
   
     <link rel="alternative" href="/atom.xml" title="褚文达的博客" type="application/atom+xml">
   
@@ -154,36 +159,88 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-算法设计课笔记/复杂度描述" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      复杂度描述
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/15/算法设计课笔记/复杂度描述/" class="archive-article-date">
+
+        
+        <a href="/2019/09/15/算法设计课笔记/复杂度描述/" class="archive-article-date">
   	<time datetime="2019-09-15T09:30:55.465Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/15/算法设计课笔记/复杂度描述/">复杂度描述</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Cond. n is </p>
+</blockquote>
+<h4 id="Def"><a href="#Def" class="headerlink" title="Def."></a>Def.</h4><ul>
+<li><p>Poly-time algorithm. When the input size doubles, the algorithm should only slow down by some constant factor C. </p>
+<ul>
+<li>There exists constants c &gt; 0 and d &gt; 0 such that on every input of size n, its running time is bounded by c n<sup>d</sup> primitive computational steps.</li>
+</ul>
+</li>
+<li><p>Big-Oh notation. <em>T</em> (<em>n</em> ) is <em>O</em> (<em>f</em> (<em>n</em> ))  if there exist constants <em>c</em> &gt;0 and <em>n<sub>0</sub></em>  ≥ 0 such that <em>T</em> (<em>n</em> )  ≤  c · <em>f</em> (<em>n</em> )  for all <em>n</em>  ≥  <em>n<sub>0</sub></em> .</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\displaystyle \lim_&#123;n\to\infty&#125; \frac&#123;T(n)&#125;&#123;f(n)&#125; &lt; inf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Big-Omega notation. <em>T</em> (<em>n</em> ) is <em>Ω</em> (<em>f</em> (<em>n</em> )) if there exist constants <em>c</em> &gt;0 and <em>n<sub>0</sub></em>  ≥0 such that T(n)  ≥ <em>c</em> · <em>f</em> (<em>n</em> )  for all <em>n</em>  ≥<em>n<sub>0</sub></em> .</p>
+</li>
+<li><p>Big-Theta notation. <em>T</em> (<em>n</em> ) is <em>Θ</em> (<em>f</em> (<em>n</em> )) if there exist constants <em>c<sub>1</sub></em> &gt; 0, <em>c<sub>2</sub></em> &gt; 0, and <em>n<sub>0</sub></em>  ≥ 0 such that <em>c<sub>1</sub></em> ·  <em>f</em> (<em>n</em> )  ≤ <em>T</em> (<em>n</em> )  ≤  <em>c<sub>2</sub></em> · <em>f</em> (<em>n</em> )  for all n  ≥  <em>n<sub>0</sub></em> .</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\displaystyle \lim_&#123;n\to\infty&#125; \frac&#123;T(n)&#125;&#123;f(n)&#125; = c</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+</li>
+</ul>
+<h4 id="Summary"><a href="#Summary" class="headerlink" title="Summary."></a>Summary.</h4><ul>
+<li>if  <em>f</em> (<em>n</em> ) is <em>Θ</em> (<em>g</em> (<em>n</em> )).<br>by def, <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c_1≤ \frac&#123;f(n)&#125;&#123;g(n)&#125; ≤ c_2</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>thus,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n ≥ n_0, f(n) ≤ c_2·g(n),</span><br></pre></td></tr></table></figure>
+
+<p>then, <em>f</em> (<em>n</em> ) is <em>O</em> (<em>g</em> (<em>n</em> )).<br>similarly, <em>f</em> (<em>n</em> ) is <em>Ω</em> (<em>f</em> (<em>n</em> )) </p>
+<ul>
+<li><em>Θ</em> (log<sub>a</sub>n) is <em>Θ</em> (log<sub>b</sub>n) for any constants a, b&gt;0.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\frac&#123;log_a(n)&#125;&#123;log_b(n)&#125; = \frac&#123;log_a(n)*log_a(b)&#125;&#123;log_a(n)&#125;=log_a(b)=c</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="没写完，吃饭去了。"><a href="#没写完，吃饭去了。" class="headerlink" title="没写完，吃饭去了。"></a>没写完，吃饭去了。</h1>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,84 +252,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://chuwenda.cn/2019/09/15/算法设计课笔记/复杂度描述/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/15/算法设计课笔记/稳定匹配/" class="archive-article-date">
-  	<time datetime="2019-09-15T02:22:12.716Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/15/算法设计课笔记/稳定匹配/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">稳定匹配问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/15/算法设计课笔记/稳定匹配/">稳定匹配问题</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">算法设计笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/13/hello-world/" class="archive-article-date">
-  	<time datetime="2019-09-13T12:54:37.107Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/13/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -295,8 +374,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
