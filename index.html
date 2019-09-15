@@ -49,7 +49,7 @@
 		  <h1 class="header-author"><a href="/">褚文达</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">爱国 科学 民主 进步</p>
+		<p class="header-subtitle">爱国 进步 民主 科学</p>
 		
 
 		<nav class="header-menu">
@@ -109,7 +109,7 @@
 			  <h1 class="header-author js-header-author">褚文达</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>爱国 科学 民主 进步<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>爱国 进步 民主 科学<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -155,6 +155,108 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-算法设计课笔记/稳定匹配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h3><p>社会问题：医院与学生匹配</p>
+<h3 id="def"><a href="#def" class="headerlink" title="def."></a>def.</h3><ul>
+<li>Unstable pair. x and y are unstable if:  <ul>
+<li>x prefers y.</li>
+<li>y prefers x.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Stable assignment.  Assignment with no unstable pairs. </li>
+</ul>
+<ul>
+<li>Perfect matching. 全匹配。</li>
+</ul>
+<ul>
+<li>Stable matching. A stable matching is a <strong>perfect matching</strong> with no unstable pairs.</li>
+</ul>
+<h3 id="algorithm"><a href="#algorithm" class="headerlink" title="algorithm."></a>algorithm.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">GALE–SHAPLEY (preference lists for men and women)</span><br><span class="line"> </span><br><span class="line">INITIALIZE S to empty matching</span><br><span class="line">WHILE  (some man m is unmatched and hasn&apos;t proposed to every woman)    </span><br><span class="line">    w ← ﬁrst woman on m&apos;s list to whom m has not yet proposed. </span><br><span class="line">    IF  (w is unmatched) </span><br><span class="line">        Add pair m–w to matching S. </span><br><span class="line">    ELSE IF  (w prefers m to her current partner m&apos;) </span><br><span class="line">        Remove pair m&apos;–w from matching S. </span><br><span class="line">        Add pair m–w to matching S. </span><br><span class="line">    ELSE w rejects m.</span><br><span class="line">RETURN stable matching S.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>termination<ul>
+<li>pf. men only get n^2^ possible , women accept any men if unmatched.</li>
+</ul>
+</li>
+<li>perfection<ul>
+<li>pf. men propose to every woman.</li>
+</ul>
+</li>
+<li>stability<ul>
+<li>pf. by contraction. if A-Z is a unstabel pair.<ul>
+<li>Case 1. Z never proposed to A. Z prefers B to A. A-Z is stable.</li>
+<li>Case 2. Z proposed to A. A rejected Z COS A prefers Y. A-Z is stable.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h3><blockquote>
+<p>Cond. Man-optimal. i.e. men chase women.</p>
+</blockquote>
+<ol>
+<li>Men propose to women in decreasing order of preference.</li>
+<li>Once a woman is matched, she never becomes unmatched.</li>
+<li>For a given problem instance, there may be several stable matchings.</li>
+<li>Each man receives best valid partner.</li>
+<li>Inverse list could improve performance. o(n)-&gt;o(1)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for i = 1 to n</span><br><span class="line">    inverse[pref[i]] = i</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="problem"><a href="#problem" class="headerlink" title="problem."></a>problem.</h3><p>Q.  Do stable matchings always exist? </p>
+<p>A.  Not obvious a priori. e.g. 2n people; each person ranks others from 1 to 2n–1. </p>
+<p>Q.  Does man-optimality come at the expense of the women?</p>
+<p>A.  Yes.</p>
+<p>Q.  Can there be an incentive to misrepresent your preference list?</p>
+<p>A. No, for any man; yes, for some women.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/15/算法设计课笔记/稳定匹配/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
