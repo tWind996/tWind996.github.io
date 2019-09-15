@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//chuwenda.cn">
-  <title>Archives | 褚文达的博客</title>
+  <title>稳定匹配问题 | 褚文达的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="褚文达的博客">
-<meta property="og:url" content="//chuwenda.cn/archives/index.html">
+  <meta name="description" content="问题来源社会问题：医院与学生匹配 Def. Unstable pair. x and y are unstable if:   x prefers y. y prefers x.     Stable assignment.  Assignment with no unstable pairs.    Perfect matching. 全匹配。   Stable matching. A stab">
+<meta name="keywords" content="算法设计笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="稳定匹配问题">
+<meta property="og:url" content="//chuwenda.cn/2019/09/14/算法设计课笔记/稳定匹配/index.html">
 <meta property="og:site_name" content="褚文达的博客">
+<meta property="og:description" content="问题来源社会问题：医院与学生匹配 Def. Unstable pair. x and y are unstable if:   x prefers y. y prefers x.     Stable assignment.  Assignment with no unstable pairs.    Perfect matching. 全匹配。   Stable matching. A stab">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-15T11:46:00.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="褚文达的博客">
+<meta name="twitter:title" content="稳定匹配问题">
+<meta name="twitter:description" content="问题来源社会问题：医院与学生匹配 Def. Unstable pair. x and y are unstable if:   x prefers y. y prefers x.     Stable assignment.  Assignment with no unstable pairs.    Perfect matching. 全匹配。   Stable matching. A stab">
   
     <link rel="alternative" href="/atom.xml" title="褚文达的博客" type="application/atom+xml">
   
@@ -154,74 +159,105 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-算法设计课笔记/稳定匹配" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/15/算法设计课笔记/复杂度描述/" class="archive-article-date">
-  	<time datetime="2019-09-15T10:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/15/算法设计课笔记/复杂度描述/">复杂度描述</a>
+    <h1 class="article-title" itemprop="name">
+      稳定匹配问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">算法设计笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/14/算法设计课笔记/稳定匹配/" class="archive-article-date">
+        
+        <a href="/2019/09/14/算法设计课笔记/稳定匹配/" class="archive-article-date">
   	<time datetime="2019-09-14T10:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-14</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/14/算法设计课笔记/稳定匹配/">稳定匹配问题</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h3><p>社会问题：医院与学生匹配</p>
+<h3 id="Def"><a href="#Def" class="headerlink" title="Def."></a>Def.</h3><ul>
+<li>Unstable pair. x and y are unstable if:  <ul>
+<li>x prefers y.</li>
+<li>y prefers x.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Stable assignment.  Assignment with no unstable pairs. </li>
+</ul>
+<ul>
+<li>Perfect matching. 全匹配。</li>
+</ul>
+<ul>
+<li>Stable matching. A stable matching is a <strong>perfect matching</strong> with no unstable pairs.</li>
+</ul>
+<h3 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm."></a>Algorithm.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">GALE–SHAPLEY (preference lists for men and women)</span><br><span class="line"> </span><br><span class="line">INITIALIZE S to empty matching</span><br><span class="line">WHILE  (some man m is unmatched and hasn&apos;t proposed to every woman)    </span><br><span class="line">    w ← ﬁrst woman on m&apos;s list to whom m has not yet proposed. </span><br><span class="line">    IF  (w is unmatched) </span><br><span class="line">        Add pair m–w to matching S. </span><br><span class="line">    ELSE IF  (w prefers m to her current partner m&apos;) </span><br><span class="line">        Remove pair m&apos;–w from matching S. </span><br><span class="line">        Add pair m–w to matching S. </span><br><span class="line">    ELSE w rejects m.</span><br><span class="line">RETURN stable matching S.</span><br></pre></td></tr></table></figure>
+<ul>
+<li>termination<ul>
+<li>pf. men only get n<sup>2</sup> possible , women accept any men if unmatched.</li>
+</ul>
+</li>
+<li>perfection<ul>
+<li>pf. men propose to every woman.</li>
+</ul>
+</li>
+<li>stability<ul>
+<li>pf. by contraction. if A-Z is a unstabel pair.<ul>
+<li>Case 1. Z never proposed to A. Z prefers B to A. A-Z is stable.</li>
+<li>Case 2. Z proposed to A. A rejected Z COS A prefers Y. A-Z is stable.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary."></a>Summary.</h3><blockquote>
+<p>Cond. Man-optimal. i.e. men chase women.</p>
+</blockquote>
+<ol>
+<li>Men propose to women in decreasing order of preference.</li>
+<li>Once a woman is matched, she never becomes unmatched.</li>
+<li>For a given problem instance, there may be several stable matchings.</li>
+<li>Each man receives best valid partner.</li>
+<li>Inverse list could improve performance. o(n)-&gt;o(1).<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for i = 1 to n</span><br><span class="line">    inverse[pref[i]] = i</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem."></a>Problem.</h3><p>Q.  Do stable matchings always exist?<br>A.  Not obvious a priori. e.g. 2n people; each person ranks others from 1 to 2n–1. </p>
+<p>Q.  Does man-optimality come at the expense of the women?<br>A.  Yes.</p>
+<p>Q.  Can there be an incentive to misrepresent your preference list?<br>A. No, for any man; yes, for some women.</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -233,46 +269,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://chuwenda.cn/2019/09/14/算法设计课笔记/稳定匹配/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/13/hello-world/" class="archive-article-date">
-  	<time datetime="2019-09-13T12:54:37.107Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-13</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/09/15/算法设计课笔记/复杂度描述/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          复杂度描述
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/13/hello-world/">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -295,8 +400,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

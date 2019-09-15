@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="褚文达的博客">
 <meta property="og:description" content="Cond. n is size of input.  Def. Poly-time algorithm. When the input size doubles, the algorithm should only slow down by some constant factor C.  There exists constants $c&amp;gt;0$ and $d&amp;gt;0$ such tha">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-15T11:22:42.985Z">
+<meta property="og:updated_time" content="2019-09-15T11:53:05.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="复杂度描述">
 <meta name="twitter:description" content="Cond. n is size of input.  Def. Poly-time algorithm. When the input size doubles, the algorithm should only slow down by some constant factor C.  There exists constants $c&amp;gt;0$ and $d&amp;gt;0$ such tha">
@@ -189,7 +189,12 @@
 </ul>
 </li>
 <li><p>Big-Oh notation. $T(n)$ is $O(f(n))$ if there exist constants $c&gt;0$ and $n_0\geq 0$ such that $T(n)\leq c·f(n)$ for all $n\geq n_0$.</p>
-<script type="math/tex; mode=display">i.e.\lim\limits_{n \to  \infty }\frac{T \left( n \right) }{f \left( n \right)}  <  \infty</script></li>
+<script type="math/tex; mode=display">i.e.\lim\limits_{n \to  \infty }\frac{T \left( n \right) }{f \left( n \right)}  <  \infty</script><ul>
+<li>$T(m,n)$ is $O(f(m,n))$ if there exist constants $c&gt;0$,$m0\geq 0$,and $n_0 \geq 0$ such that $T(m, n)\leq c·f(m,n)$ for all $n \geq n_0$ and $m \geq m_0$.</li>
+</ul>
+</li>
+</ul>
+<ul>
 <li><p>Big-Omega notation. $T(n)$ is $\Omega (f(n))$ if there exist constants $c&gt;0$ and $n_0\geq 0$ such that $T(n)\geq c·f(n)$ for all $n\geq n_0$.</p>
 </li>
 <li><p>Big-Theta notation. $T(n)$ is $\Theta (f(n))$ if there exist constants $c_1&gt;0,c_2&gt;0,$ and $n_0&gt;0$ such that $c_1·f(n)\leq T(n)\leq c_2·f(n)$ for all $n&gt;n_0$.</p>
@@ -198,8 +203,10 @@
 <h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary."></a>Summary.</h3><ul>
 <li>If  $f(n)$ is $\Theta (g(n))$,by def,<script type="math/tex">c_1\leq \frac{f(n)}{g(n)}\leq c_2</script>.thus,<script type="math/tex">n\geq n_0,f(n)\leq c_2·g(n)</script>.then, $f(n)$ is $O(g(n))$.similarly, $f(n)$ is also $\Omega (f(n))$. </li>
 <li>$\Theta (log_a(n))$ is $\Theta (log_b(n))$ for any constants $a,b&gt;0$.<script type="math/tex; mode=display">pf.\frac{log_a(n)}{log_b(n)} = \frac{log_a(n)·log_a(b)}{log_a(n)}=log_a(b)=Const</script></li>
+<li>For every $d&gt;0,log(n)$ is $O(n^d)$.</li>
+<li>For every $r&gt;1$ and every $d&gt;0$,$n^d$ is $O(r^n)$.</li>
 </ul>
-<h2 id="没写完，吃饭去了。"><a href="#没写完，吃饭去了。" class="headerlink" title="没写完，吃饭去了。"></a>没写完，吃饭去了。</h2>
+
       
 
       
@@ -304,7 +311,7 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/09/15/算法设计课笔记/稳定匹配/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/09/14/算法设计课笔记/稳定匹配/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">稳定匹配问题</div>
       <i class="icon-circle-right"></i>
     </a>
