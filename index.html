@@ -156,6 +156,119 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-算法设计课笔记/优先队列实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/21/算法设计课笔记/优先队列实现/">优先队列</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/21/算法设计课笔记/优先队列实现/" class="archive-article-date">
+  	<time datetime="2019-09-21T10:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>实现算法中的优先级。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>选用什么数据结构？（考虑增删与查找最值的复杂度。）</p>
+<ul>
+<li>数组，检索要$O(n)$，增删可能移位要$O(n)$</li>
+<li>有序数组，可二分查找$O(log(n))$，增删可能要移位要$O(n)$。</li>
+<li>双向链表。增删$O(1)$，查找$O(n)$。</li>
+<li>堆！增删与查找复杂度都是$O(log(n))$。</li>
+</ul>
+<h3 id="堆实现"><a href="#堆实现" class="headerlink" title="堆实现"></a>堆实现</h3><p>堆的物理结构为连续数组，所以逻辑结构应为完全二叉树。</p>
+<h4 id="实现堆的操作"><a href="#实现堆的操作" class="headerlink" title="实现堆的操作"></a>实现堆的操作</h4><blockquote>
+<p>最小堆，任何结点的值都应小于等于父结点值。</p>
+</blockquote>
+<ul>
+<li><p>向上调整。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adjustUp(i)</span><br><span class="line">	<span class="keyword">if</span>(parent(i)&gt;i)&#123;</span><br><span class="line">		swap(i,parent(i))</span><br><span class="line">		adjustUp(parent(i))</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>向下调整。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adjustDown(i)</span><br><span class="line">	<span class="keyword">if</span>(i &gt; min(lChild(i),rChild(i)))&#123;</span><br><span class="line">		swap(i,minchild);</span><br><span class="line">		adjustDown(minchild)</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>建堆。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">init(n)	<span class="comment">//建立结点数为n的堆</span></span><br><span class="line">	<span class="keyword">for</span> i=(n<span class="number">-1</span>)/<span class="number">2</span> to <span class="number">0</span> <span class="comment">//根节点编号为0</span></span><br><span class="line">		adjustDown(i)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="优先队列实现"><a href="#优先队列实现" class="headerlink" title="优先队列实现"></a>优先队列实现</h4><ul>
+<li><p>创建。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">initPriorityQueue()，返回空数组指针。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">insert(x)</span><br><span class="line">	Heap[n] = x</span><br><span class="line">	adjustUp(n)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>随机删除。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span>(i)</span><br><span class="line">	swap(i,last)	<span class="comment">//last为最后一个结点</span></span><br><span class="line">	adjustDown(last)</span><br><span class="line">	adjustUp(last)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>得到最值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">findMin()</span><br><span class="line">	<span class="keyword">return</span> Heap[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>挑出最值后删除。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">popMin()</span><br><span class="line">	val = findMin()</span><br><span class="line">	<span class="keyword">delete</span>(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">算法设计笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/21/算法设计课笔记/优先队列实现/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-算法设计课笔记/复杂度描述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -709,21 +822,5 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!--script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
