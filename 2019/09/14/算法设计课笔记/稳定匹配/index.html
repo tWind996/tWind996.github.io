@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="褚文达的博客">
 <meta property="og:description" content="问题来源社会问题：医院与学生匹配 Def. Unstable pair. x and y are unstable if:   x prefers y. y prefers x.     Stable assignment.  Assignment with no unstable pairs.    Perfect matching. 全匹配。   Stable matching. A stab">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-21T13:51:40.117Z">
+<meta property="og:updated_time" content="2020-09-11T02:37:13.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="稳定匹配问题">
 <meta name="twitter:description" content="问题来源社会问题：医院与学生匹配 Def. Unstable pair. x and y are unstable if:   x prefers y. y prefers x.     Stable assignment.  Assignment with no unstable pairs.    Perfect matching. 全匹配。   Stable matching. A stab">
@@ -196,6 +196,7 @@
 <ul>
 <li>Stable matching. A stable matching is a <strong>perfect matching</strong> with no unstable pairs.</li>
 </ul>
+<a id="more"></a>
 <h3 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm."></a>Algorithm.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">GALE–SHAPLEY (preference lists for men and women)</span><br><span class="line"> </span><br><span class="line">INITIALIZE S to empty matching</span><br><span class="line">WHILE  (some man m is unmatched and hasn&apos;t proposed to every woman)    </span><br><span class="line">    w ← ﬁrst woman on m&apos;s list to whom m has not yet proposed. </span><br><span class="line">    IF  (w is unmatched) </span><br><span class="line">        Add pair m–w to matching S. </span><br><span class="line">    ELSE IF  (w prefers m to her current partner m&apos;) </span><br><span class="line">        Remove pair m&apos;–w from matching S. </span><br><span class="line">        Add pair m–w to matching S. </span><br><span class="line">    ELSE w rejects m.</span><br><span class="line">RETURN stable matching S.</span><br></pre></td></tr></table></figure>
 <ul>
 <li>termination<ul>
@@ -397,7 +398,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 褚文达
+    		&copy; 2020 褚文达
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -510,6 +511,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">算法设计笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CSAPP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">lab</a>
               </li>
             
             <div class="clearfix"></div>

